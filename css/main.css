@@ -157,6 +157,7 @@ body {
 .social-section p {
   color: #a1a1a1;
   line-height: 1.4;
+  font-size: large;
 }
 
 .social-section i {
@@ -244,7 +245,8 @@ body {
 .sublist .sublist-desc {
   color: #777;
   line-height: 1.6;
-  margin-bottom: 30px
+  margin-bottom: 30px;
+  font-size: large;
 }
 
 .sublist .list-icon {
