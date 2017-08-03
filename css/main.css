@@ -326,7 +326,11 @@ body {
 .awesome .awesome-desc {
   margin-bottom: 50px;
   color: #a9aaac;
-  font-size: large;
+  font-size: x-large;
+}
+.awesome .awesome-desc span{
+    color: #ff8b38;
+
 }
 
 @media (max-width: 991px) {
