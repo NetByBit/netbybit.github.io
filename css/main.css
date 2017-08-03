@@ -325,7 +325,8 @@ body {
 
 .awesome .awesome-desc {
   margin-bottom: 50px;
-  color: #a9aaac
+  color: #a9aaac;
+  font-size: large;
 }
 
 @media (max-width: 991px) {
