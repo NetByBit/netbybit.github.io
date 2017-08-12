@@ -319,10 +319,6 @@ body {
   padding: 40px 0
 }
 
-.awesome .awesome-head {
-  font-size: 50px
-}
-
 .awesome .awesome-desc {
   margin-bottom: 50px;
   color: #a9aaac;
@@ -377,8 +373,36 @@ body {
 
 .contact-us .contact-desc {
   color: #a9aaac;
-  margin-bottom: 40px;
-  font-size: x-large;
+  margin-bottom: 40px
+}
+
+.contact-us form input[type="text"],
+.contact-us form input[type="email"] {
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 0
+}
+
+.contact-us form textarea {
+  height: 178px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.contact-us .contact-btn {
+  margin: 30px auto;
+  display: block;
+  padding: 8px 20px;
+  border: 2px solid #FFF;
+  background-color: #ff8b38;
+  color: #FFF;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 
