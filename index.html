@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/font-awesome.min.css" />
   <link rel="stylesheet" href="css/technology-icons.css">
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -36,32 +37,30 @@
   </div> -->
 
   <!-- Start Navbar -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#axit-nav" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+      <a class="navbar-brand" href="#">Web<span>Point</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+        aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
-        <a class="navbar-brand" href="#">Web<span>Point</span></a>
-      </div>
       <div class="collapse navbar-collapse" id="axit-nav">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a data-value="why" href="#">Why Us?</a></li>
-          <li><a data-value="features" href="#">Features</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hire Us<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="https://www.fiverr.com/mostadawood">Fiverr</a></li>
-              <li><a href="https://www.freelancer.com/u/MostafaDaoud">Freelancer</a></li>
-              <li><a href="https://www.upwork.com/freelancers/~011ed407c20ef1c7b0">Upwork</a></li>
-              <li><a href="https://www.peopleperhour.com/freelancer/mostafa/web-designer/1774022">peopleperhour</a></li>
-            </ul>
-          </li>
-          <li><a data-value="our-team" href="#">Our Team</a></li>
-          <li><a href="#" data-value="contact">Contact</a></li>
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" data-value="why" href="#">Why Us?</a></li>
+            <li class="nav-item"><a class="nav-link" data-value="features" href="#">Features</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hire Us
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="https://www.fiverr.com/mostadawood">Fiverr</a>
+                <a class="dropdown-item" href="https://www.freelancer.com/u/MostafaDaoud">Freelancer</a>
+                <a class="dropdown-item" href="https://www.upwork.com/freelancers/~011ed407c20ef1c7b0">Upwork</a>
+                <a class="dropdown-item" href="https://www.peopleperhour.com/freelancer/mostafa/web-designer/1774022">peopleperhour</a>
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" data-value="contact" href="#">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -76,7 +75,7 @@
             <h1 class="uppercase text-center-xs">Web<span>Point</span></h1>
             <p class="lead uppercase text-center-xs">Looking For Web Designers To help you build your page?</p>
             <p class="text-center-xs">View a sample of our work to see for yourself you're hiring the right people</p>
-            <a href="https://web-point.github.io/Template-2/">View</a>  
+            <a href="https://web-point.github.io/Template-2/">View</a>
           </div>
         </div>
       </div>
@@ -92,7 +91,7 @@
           <h4>Social Media</h4>
           <p>Follow us on different social platforms and see our work</p>
         </div>
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-4 ml-auto">
           <a href="https://www.facebook.com/Webpoint.dev">
             <i class="fa fa-facebook fa-3x fa-fw"></i>
           </a>
@@ -112,7 +111,6 @@
   <div class="sublist" id="why">
     <div class="container">
       <div class="row">
-
         <!-- Start Column 6 -->
         <div class="col-md-6">
           <div class="list-info">
@@ -125,24 +123,24 @@
         <!-- Start Column 6 -->
         <div class="col-md-6 icons">
           <div class="row text-center">
-            <div class="col-xs-4">
+            <div class="col-4">
               <i class="icon-html5"></i>
             </div>
-            <div class="col-xs-4">
+            <div class="col-4">
               <i class="icon-css3-alt"></i>
             </div>
-            <div class="col-xs-4">
+            <div class="col-4">
               <i class="icon-js"></i>
             </div>
           </div>
           <div class="row text-center">
-            <div class="col-xs-4">
+            <div class="col-4">
               <i class="icon-bootstrap"></i>
             </div>
-            <div class="col-xs-4">
+            <div class="col-4">
               <i class="icon-sass"></i>
             </div>
-            <div class="col-xs-4">
+            <div class="col-4">
               <i class="icon-gulp"></i>
             </div>
           </div>
@@ -155,10 +153,10 @@
   <!-- Start Standard Picture -->
   <div class="standard-picture" id="features">
     <div class="container">
+      <h2 class="text-center h1 head-border-center uppercase">
+        Features
+      </h2>
       <div class="row">
-        <h2 class="text-center h1 head-border-center uppercase">
-          Features
-        </h2>
         <!-- Start Column 6 -->
         <div class="col-md-6">
           <div class="list-info">
@@ -169,7 +167,7 @@
         <!-- End Column 6 -->
         <!-- Start Column 6 -->
         <div class="col-md-6">
-          <img class="img-responsive center-block standard-image" src="img/web-design-min.jpg" alt="Responsive design" />
+          <img class="img-fluid center-block standard-image" src="img/web-design-min.jpg" alt="Responsive design" />
         </div>
         <!-- End Column 6 -->
       </div>
@@ -208,7 +206,7 @@
       <h2 class="h1 head-border-center uppercase text-center">Our Work On <img src="img/fiverr.svg" class="fiverr" alt="Fiverr"></h2>
       <div class="row">
         <div class="col-sm-4">
-          <img src="img/Business Parallax.jpg" alt="Parallaxbusiness" class="img-responsive">
+          <img src="img/Business Parallax.jpg" alt="Parallaxbusiness" class="img-fluid">
           <div class="text-center">
             <h4>Parallax landing page</h4>
             <p>We offer a professional business or product landing page for you</p>
@@ -216,7 +214,7 @@
           </div>
         </div>
         <div class="col-sm-4">
-          <img src="img/Scroll.jpg" alt="Nicescroll" class="img-responsive">
+          <img src="img/Scroll.jpg" alt="Nicescroll" class="img-fluid">
           <div class="text-center">
             <h4>Scroll page</h4>
             <p>We offer you an animated page to show off your product or to attract views to your page! </p>
@@ -224,7 +222,7 @@
           </div>
         </div>
         <div class="col-sm-4">
-          <img src="img/fontawesome.jpg" alt="Fontawesome" class="img-responsive">
+          <img src="img/fontawesome.jpg" alt="Fontawesome" class="img-fluid">
           <div class="text-center">
             <h4>Animated icons</h4>
             <p>We animate your web icons, helps you get more views, and viewers to stay on your page! </p>
@@ -243,17 +241,18 @@
       <div class="row">
         <div class="col-sm-4">
           <a href="https://www.freelancer.com/u/MostafaDaoud">
-              <img src="img/freelancer.svg" alt="Freelancer" class="img-responsive">
+              <img src="img/freelancer.svg" alt="Freelancer" class="img-fluid">
             </a>
         </div>
         <div class="col-sm-4">
           <a href="https://www.upwork.com/freelancers/~011ed407c20ef1c7b0">
-              <img src="img/upwork.svg" alt="Upwork" class="img-responsive">
+
+              <img src="img/upwork.svg" alt="Upwork" class="img-fluid">
             </a>
         </div>
         <div class="col-sm-4">
           <a href="https://www.peopleperhour.com/freelancer/mostafa/web-designer/1774022">
-              <img src="img/pph.svg" alt="PeoplePerHour" class="img-responsive">
+              <img src="img/pph.svg" alt="PeoplePerHour" class="img-fluid">
             </a>
         </div>
       </div>
@@ -262,13 +261,15 @@
   <div class="our-team" id="our-team">
     <div class="container">
       <h2 class="h1 head-border-center uppercase text-center">Our Team</h2>
-      <div class="row">
-        <div class="col-sm-5">
-          <div class="col-md-8 col-md-offset-2">
-            <img src="img/Mostafa.jpg" alt="" class="img-responsive">
+      <div class="row justify-content-around">
+        <div class="col-sm-5 text-center">
+          <div class="row justify-content-md-center">
+            <div class="col-md-8">
+              <img src="img/Mostafa.jpg" alt="Mostafa" class="img-fluid">
+            </div>
           </div>
-          <h2 class="text-center">Mostafa Nasser Daoud</h2>
-          <div class="icons text-center">
+          <h2>Mostafa Nasser Daoud</h2>
+          <div class="icons">
             <a href="https://github.com/MostaDaoud">
               <i class="fa fa-github fa-3x fa-fw"></i>
             </a>
@@ -277,19 +278,20 @@
             </a>
           </div>
         </div>
-        <div class="col-sm-5 col-sm-offset-2">
-          <div class="col-md-8 col-md-offset-2">
-            <img src="img/Amr.jpg" alt="" class="img-responsive">
+        <div class="col-sm-5 text-center">
+          <div class="row justify-content-md-center">
+            <div class="col-md-8">
+              <img src="img/Amr.jpg" alt="Amr" class="img-fluid">
+            </div>
           </div>
-          <div class="clearfix"></div>
-          <h2 class="text-center">Amr A.Mohammed</h2>
-          <div class="icons text-center">
+          <h2>Amr A.Mohammed</h2>
+          <div class="icons">
             <a href="https://github.com/merodiro">
-              <i class="fa fa-github fa-3x fa-fw"></i>
-            </a>
+                <i class="fa fa-github fa-3x fa-fw"></i>
+              </a>
             <a href="https://www.facebook.com/mero.diro">
-              <i class="fa fa-facebook fa-3x fa-fw"></i>
-            </a>
+                <i class="fa fa-facebook fa-3x fa-fw"></i>
+              </a>
           </div>
         </div>
       </div>
@@ -300,9 +302,9 @@
     <div class="container">
       <h2 class="contact-head h1 head-border-center uppercase text-center" >Contact us</h2>
       <p class="contact-desc text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fugiat.</p>
-      <!-- Start Grid -->
-      <div class="row">
-        <form class="contact" action="https://formspree.io/mostadawood@gmail.com" method="POST">
+      <form class="contact" action="https://formspree.io/mostadawood@gmail.com" method="POST">
+        <!-- Start Grid -->
+        <div class="row">
           <div class="col-md-6">
             <input class="form-control input-lg" type="text" name="name" placeholder="Name" required>
             <input class="form-control input-lg" type="email" name="email" placeholder="Your e-mail" required>
@@ -314,26 +316,29 @@
           </div>
           <div class="clearfix"></div>
           <button class="btn-main" type="submit">Send Message</button>
-        </form>
-      </div>
-      <!-- End Grid -->
+        </div>
+        <!-- End Grid -->
+      </form>
     </div>
   </div>
   <!-- End Contact Us -->
   <script>
     (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
         (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-104063888-1', 'auto');
     ga('send', 'pageview');
   </script>
 
-  <script src="js/jquery-1.12.4.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

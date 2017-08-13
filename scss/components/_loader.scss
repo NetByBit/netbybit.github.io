@@ -1,0 +1,63 @@
+.spinner-wrapper {
+    background-color: #ff8b38;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+.sk-cube-grid {
+    float: left;
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    height: 55px;
+    width: 55px;
+    .sk-cube {
+        animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+        background-color: #fff;
+        float: left;
+        height: 33%;
+        width: 33%;
+    }
+    .sk-cube1 {
+        animation-delay: 0.2s;
+    }
+    .sk-cube2 {
+        animation-delay: 0.3s;
+    }
+    .sk-cube3 {
+        animation-delay: 0.4s;
+    }
+    .sk-cube4 {
+        animation-delay: 0.1s;
+    }
+    .sk-cube5 {
+        animation-delay: 0.2s;
+    }
+    .sk-cube6 {
+        animation-delay: 0.3s;
+    }
+    .sk-cube7 {
+        animation-delay: 0s;
+    }
+    .sk-cube8 {
+        animation-delay: 0.1s;
+    }
+    .sk-cube9 {
+        animation-delay: 0.2s;
+    }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+    0%,
+    70%,
+    100% {
+        transform: scale3D(1, 1, 1);
+    }
+    35% {
+        transform: scale3D(0, 0, 1);
+    }
+}

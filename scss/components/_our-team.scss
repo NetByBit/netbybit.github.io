@@ -1,0 +1,38 @@
+.our-team {
+  padding: 40px 0;
+  .row {
+    color: #888;
+  }
+  img {
+    filter: #{"grayscale(1)"};
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+  .fa {
+    color: #888;
+  }
+  .col-sm-5 * {
+    transition: all .6s ease-in-out;
+  }
+  .col-sm-5:hover {
+    color: #000;
+  }
+  .col-sm-5:hover img {
+    filter: none;
+  }
+  .col-sm-5:hover .fa-facebook {
+    color: #3b5998
+  }
+  .col-sm-5:hover .fa-github {
+    color: #262626
+  }
+  .col-sm-5 img {
+    margin-bottom: 50px;
+  }
+  @media (max-width: 750px) {
+    .col-sm-5 {
+      padding-top: 40px;
+    }
+  }
+}
