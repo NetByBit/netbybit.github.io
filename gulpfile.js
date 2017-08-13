@@ -16,14 +16,6 @@ const concat = require('gulp-concat');
 const merge = require('merge2');
 const htmlReplace = require('gulp-html-replace');
 
-// lazy pipe
-
-const cssTasks = lazypipe()
-    .pipe(uncss, {
-        html: ['index.html'],
-    });
-
-
 // Tasks
 
 gulp.task('sass', function () {
@@ -39,6 +31,12 @@ gulp.task('sass', function () {
 gulp.task('styles', function () {
 
     return gulp.src('css/**/*.css')
+        // .pipe(uncss({
+        //     html: ['index.html'],
+        //     ignore: [
+        //         '.show',
+        //     ]
+        // }))
         .pipe(concat('styles.min.css'))
         .pipe(csso())
         .pipe(gulp.dest('dist/css'));
@@ -56,7 +54,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('js', function () {
-    var main = gulp.src(['js/**/*.js', '!js/main.js'])
+    var main = gulp.src(['js/jquery-3.2.1.min.js', 'js/popper.min.js', 'js/bootstrap.min.js'])
         .pipe(concat('vendor.js'))
 
     var sec = gulp.src('js/main.js')
@@ -77,15 +75,9 @@ gulp.task('browserSync', function () {
 });
 
 gulp.task('images', function () {
-    return gulp.src('images/**/*.+(png|jpg|jpeg|gif|svg)')
+    return gulp.src('img/**/*.+(png|jpg|jpeg|gif|svg)')
         .pipe(cache(image()))
-        .pipe(gulp.dest('dist/images'))
-});
-
-gulp.task('cssimages', function () {
-    return gulp.src('css/images/**/*.+(png|jpg|jpeg|gif|svg)')
-        .pipe(cache(image()))
-        .pipe(gulp.dest('dist/css/images'))
+        .pipe(gulp.dest('dist/img'))
 });
 
 gulp.task('fonts', function () {
@@ -99,7 +91,9 @@ gulp.task('clean:dist', function () {
 
 gulp.task('deploy', function () {
     return gulp.src('./dist/**/*')
-        .pipe(ghPages());
+        .pipe(ghPages({
+            branch: 'master'
+        }));
 });
 
 gulp.task('watch', ['browserSync', 'sass'], function () {
@@ -112,7 +106,7 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
 
 gulp.task('build', function () {
     runSequence('clean:dist',
-        ['styles', 'html', 'js', 'images', 'cssimages', 'fonts']
+        ['styles', 'html', 'js', 'images', 'fonts']
     );
 });
 
