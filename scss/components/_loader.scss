@@ -1,5 +1,5 @@
 .spinner-wrapper {
-    background-color: #ff8b38;
+    background-color: theme-color(primary);
     position: fixed;
     top: 0;
     right: 0;
@@ -17,7 +17,7 @@
     width: 55px;
     .sk-cube {
         animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-        background-color: #fff;
+        background-color: $gray-100;
         float: left;
         height: 33%;
         width: 33%;

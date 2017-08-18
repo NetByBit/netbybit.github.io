@@ -1,13 +1,11 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
-const csso = require('gulp-csso');
 const image = require('gulp-image');
 const cache = require('gulp-cache');
 const del = require('del');
 const runSequence = require('run-sequence');
 const gulpIf = require('gulp-if');
 const ghPages = require('gulp-gh-pages');
-const uncss = require('gulp-uncss');
 const lazypipe = require('lazypipe');
 const sass = require('gulp-sass');
 const rename = require("gulp-rename");
@@ -15,6 +13,9 @@ const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const merge = require('merge2');
 const htmlReplace = require('gulp-html-replace');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
 // Tasks
 
@@ -29,16 +30,13 @@ gulp.task('sass', function () {
 });
 
 gulp.task('styles', function () {
-
+    const plugins = [
+        autoprefixer({browsers: ['last 1 version']}),
+        cssnano()
+    ];
     return gulp.src('css/**/*.css')
-        // .pipe(uncss({
-        //     html: ['index.html'],
-        //     ignore: [
-        //         '.show',
-        //     ]
-        // }))
         .pipe(concat('styles.min.css'))
-        .pipe(csso())
+        .pipe(postcss(plugins))
         .pipe(gulp.dest('dist/css'));
 });
 

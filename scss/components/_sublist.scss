@@ -1,99 +1,31 @@
-/* Start Sublist Section */
-
 .sublist {
-    padding: 40px 0
-  }
-  
-  @media (max-width: 991px) {
-    .sublist {
-      padding: 40px 0;
-      text-align: center
-    }
-  }
-  
-  .sublist .icons .row:first-of-type {
-    padding-top: 80px;
-  }
-  
-  .sublist .icons .row {
+
+  .icons .row {
     padding-top: 40px;
   }
-  
-  .sublist i {
+  i {
     font-size: 70px;
     transition: 500ms all ease-in;
+    &:hover {
+      font-size: 100px
+    }
   }
-  
-  .sublist i:hover {
-    font-size: 100px
-  }
-  
-  .sublist i.icon-html5 {
+  .icon-html5 {
     color: #e34f26
   }
-  .sublist i.icon-css3-alt {
+  .icon-css3-alt {
     color: #0052cc
   }
-  .sublist i.icon-js {
-    color:  #ffbf00
+  .icon-js {
+    color: #ffbf00
   }
-  .sublist i.icon-bootstrap {
-    color:  #5c0099
+  .icon-bootstrap {
+    color: #5c0099
   }
-  .sublist i.icon-sass {
-    color:  #c6538c
+  .icon-sass {
+    color: #c6538c
   }
-  .sublist i.icon-gulp {
-    color:  #ff4d4d
+  .icon-gulp {
+    color: #ff4d4d
   }
-  
-  .sublist .sublist-head {
-    font-weight: bold
-  }
-  
-  .sublist .sublist-desc {
-    color: #777;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    font-size: large;
-  }
-  
-  .sublist .list-icon {
-    margin-bottom: 30px;
-    overflow: hidden
-  }
-  
-  .sublist .list-icon i {
-    width: 40px;
-    height: 40px;
-    line-height: 36px;
-    text-align: center;
-    color: #ff8b38;
-    border: 2px solid #ff8b38;
-    border-radius: 50%;
-    margin-right: 20px;
-    margin-top: 20px;
-  }
-  
-  @media (max-width: 991px) {
-    .sublist .list-icon i {
-      float: none !important;
-      margin: 10px 0
-    }
-  }
-  
-  .sublist .list-icon .text-head {
-    width: calc(100% - 70px)
-  }
-  
-  @media (max-width: 991px) {
-    .sublist .list-icon .text-head {
-      float: none !important;
-      width: 100%
-    }
-  }
-  
-  .sublist .list-icon .text-head h4 {
-    font-weight: bold
-  }
-  
+}
