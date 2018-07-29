@@ -9,7 +9,7 @@ const ContactUs = () => (
       <p className="section-desc text-center">
         If you have any questions feel free to email us
       </p>
-      <form className="contact" method="POST" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+      <form className="contact" method="POST" action="/"  name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
         <div className="row">
           <div className="col-md-6">
             <input
