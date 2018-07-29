@@ -1,0 +1,34 @@
+.our-team {
+  .row {
+    color: $gray-600;
+  }
+  img {
+    filter: #{"grayscale(1)"};
+  }
+  i {
+    color: #888;
+  }
+  .person {
+    * {
+      transition: all .6s ease-in-out;
+    }
+    &:hover {
+      color: #000;
+      img {
+        filter: none;
+      }
+      .fa-facebook-f {
+        color: #3b5998
+      }
+      .fa-github {
+        color: #262626
+      }
+    }
+    img {
+      margin-bottom: 50px;
+    }
+    @include media-breakpoint-down(md) {
+      margin-bottom: 40px;
+    }
+  }
+}

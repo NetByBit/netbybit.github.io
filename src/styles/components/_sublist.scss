@@ -1,0 +1,31 @@
+.sublist {
+
+  .icons .row {
+    padding-top: 40px;
+  }
+  i {
+    font-size: 70px;
+    transition: 500ms all ease-in;
+    &:hover {
+      font-size: 100px
+    }
+  }
+  .icon-html5 {
+    color: #e34f26
+  }
+  .icon-css3-alt {
+    color: #0052cc
+  }
+  .icon-js {
+    color: #ffbf00
+  }
+  .icon-bootstrap {
+    color: #5c0099
+  }
+  .icon-sass {
+    color: #c6538c
+  }
+  .icon-gulp {
+    color: #ff4d4d
+  }
+}

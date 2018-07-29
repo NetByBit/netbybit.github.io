@@ -1,0 +1,37 @@
+.awesome {
+  @media (max-width: 750px) {
+    .feat-box {
+      margin-bottom: 30px;
+      margin-right: 30px
+    }
+  }
+  i, svg {
+    color: theme-color(primary);
+    width: 70px;
+    height: 70px;
+    line-height: 68px;
+    border: 2px solid theme-color(primary);
+    border-radius: 50%;
+    transition: all .9s ease-in-out;
+  }
+  .feat-box {
+    transition: all 1s ease-in-out;
+    &:hover {
+      @include media-breakpoint-down(sm) {
+        transform: none;
+      }
+      transform: scale3d(1.2, 1.2, 1.2);
+      i {
+        transform: rotateZ(360deg)
+      }
+    }
+  }
+  .fa-keyboard-o {
+    font-size: 35px
+  }
+  .feat-head {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px
+  }
+}

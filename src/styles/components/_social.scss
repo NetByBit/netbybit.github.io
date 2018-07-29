@@ -1,0 +1,35 @@
+  .social-section {
+    padding: 10px;
+    box-shadow: -2px -5px 13px #000;
+    @include media-breakpoint-down(md) {
+      text-align: center
+    }
+    h4 {
+      font-weight: bold;
+      margin-bottom: 5px;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 10px
+      }
+    }
+    p {
+      font-size: large;
+    }
+    i {
+      color: $gray-600;
+      margin: 20px 15px;
+      transition: all .3s ease-in-out;
+      cursor: pointer;
+      @include media-breakpoint-down(md) {
+        margin: 10px 15px;
+      }
+    }
+    .fa-facebook-f:hover {
+      color: #3b5998
+    }
+    .fa-instagram:hover {
+      color: #f77737
+    }
+    .fa-github:hover {
+      color: #262626
+    }
+  }

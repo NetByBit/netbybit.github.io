@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/functions";
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+@import "helpers";
+@import "technology-icons";
+
+@import "components/awesome";
+@import "components/contact-us";
+@import "components/header";
+@import "components/loader";
+@import "components/our-team";
+@import "components/our-work";
+@import "components/social";
+@import "components/sublist";
