@@ -1,13 +1,19 @@
 import React from 'react'
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 const handleSubmit = e => {
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: { 'form-name': 'contact', name: 'Amr' },
+    body: encode({ 'form-name': 'contact', name: 'Amr' }),
   })
     .then(console.log)
-    .catch(error => alert(error))
+    .catch(console.error)
   e.preventDefault()
 }
 
