@@ -34,6 +34,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-crisp-chat',
+      options: {
+        websiteId: process.env.CRISP_WEBSITE_ID,
+        enableDuringDevelop: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-sass`,
       options: {
         precision: 8,

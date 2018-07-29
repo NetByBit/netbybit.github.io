@@ -11,6 +11,7 @@
     "dotenv": "^6.0.0",
     "gatsby": "next",
     "gatsby-image": "next",
+    "gatsby-plugin-crisp-chat": "^2.1.0",
     "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-nprogress": "^1.0.14",
