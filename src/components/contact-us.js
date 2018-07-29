@@ -48,8 +48,9 @@ const ContactUs = () => (
             />
           </div>
         </div>
-        <input type="hidden" name="bot-field" />
         <button className="btn btn-primary mt-md-3 mt-5">Send Message</button>
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="dummy" value="test" />
       </form>
     </div>
   </div>
