@@ -1,5 +1,16 @@
 import React from 'react'
 
+const handleSubmit = e => {
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: encode({ 'form-name': 'contact', name: 'Amr' }),
+  })
+    .then(this.handleSuccess)
+    .catch(error => alert(error))
+  e.preventDefault()
+}
+
 const ContactUs = () => (
   <div className="contact-us section" id="contact">
     <div className="container">
@@ -15,6 +26,7 @@ const ContactUs = () => (
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
       >
         <div className="row">
           <div className="col-md-6">
