@@ -12,7 +12,7 @@ const Header = () => (
           description
           backgroundImage {
             fluid(maxWidth: 800) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
         }

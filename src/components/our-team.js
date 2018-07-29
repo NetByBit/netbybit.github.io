@@ -16,7 +16,7 @@ const OurTeam = () => (
               githubLink
               image {
                 fixed(width: 280, height:280) {
-                  ...GatsbyContentfulFixed_tracedSVG
+                  ...GatsbyContentfulFixed
                 }
               }
             }
