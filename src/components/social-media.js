@@ -27,7 +27,6 @@ const SocialMedia = () => (
               <h4>Social Media</h4>
               <p className="text-muted">
                 {data.datoCmsSocialMediaSection.subtitle}
-                Follow us on different social platforms and see our work
               </p>
             </div>
             <div className="col-md-4 ml-auto">

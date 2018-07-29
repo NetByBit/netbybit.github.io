@@ -1,4 +1,6 @@
 import React from 'react'
+
+import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 
 const Header = () => (
@@ -8,11 +10,17 @@ const Header = () => (
         datoCmsHeader {
           description
           subtitle
+          backgroundImage {
+            fluid(maxWidth: 800, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
         }
       }
     `}
     render={data => (
       <div className="header">
+        <Img fluid={data.datoCmsHeader.backgroundImage.fluid} imgStyle={{objectFit: 'cover', objectPosition: 'top center'}} />
         <div className="overlay">
           <div className="container">
             <div className="row centering-vh">

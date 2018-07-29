@@ -19,7 +19,6 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        {console.log(data)}
         <HelmetDatoCms seo={data.datoCmsSeoMetaTags}>
           <title>{data.datoCmsSite.name}</title>
         </HelmetDatoCms>
