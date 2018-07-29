@@ -5,6 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Web Point',
+    description: 'WebPoint is Freelacering Webpage, web design your Webpage, we develop professional sites and do prjects, fix bugs.find us on fiverr and upwork'
   },
   plugins: [
     {
@@ -17,12 +18,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-datocms`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        apiToken: process.env.DATOCMS_APITOKEN,
-        previewMode: false,
-        disableLiveReload: false,
-        apiUrl: 'https://site-api.datocms.com',
+        spaceId: process.env.CONTENTFUL_ID,
+        accessToken: process.env.CONTENTFUL_TOKEN,
       },
     },
     {

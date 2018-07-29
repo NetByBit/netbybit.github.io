@@ -3,14 +3,11 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Mostafa from '../img/Mostafa.jpg'
-import Amr from '../img/Amr.jpg'
-
 const OurTeam = () => (
   <StaticQuery
     query={graphql`
       query TeamQuery {
-        allDatoCmsMember {
+        allContentfulMember {
           edges {
             node {
               id
@@ -18,8 +15,8 @@ const OurTeam = () => (
               facebookLink
               githubLink
               image {
-                fixed(width: 280, height:280, imgixParams: {fm: "jpg", auto: "compress"}) {
-                  ...GatsbyDatoCmsFixed
+                fixed(width: 280, height:280) {
+                  ...GatsbyContentfulFixed_tracedSVG
                 }
               }
             }
@@ -34,7 +31,7 @@ const OurTeam = () => (
             Our Team
           </h2>
           <div className="row justify-content-around">
-            {data.allDatoCmsMember.edges.map(({ node }) => (
+            {data.allContentfulMember.edges.map(({ node }) => (
               <div className="col-md-5 person text-center">
                 <div className="row justify-content-md-center">
                   <div className="col-md-8">
