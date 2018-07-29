@@ -24,8 +24,8 @@
         color: #262626
       }
     }
-    img {
-      margin-bottom: 50px;
+    .gatsby-image-wrapper {
+      margin-bottom: 30px;
     }
     @include media-breakpoint-down(md) {
       margin-bottom: 40px;
