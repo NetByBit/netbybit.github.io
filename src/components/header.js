@@ -20,7 +20,7 @@ const Header = () => (
     `}
     render={data => (
       <div className="header">
-        <Img fluid={data.datoCmsHeader.backgroundImage.fluid} imgStyle={{objectFit: 'cover', objectPosition: 'top center'}} />
+        <Img fluid={data.datoCmsHeader.backgroundImage.fluid} style={{height: '100vh'}} imgStyle={{objectFit: 'cover', objectPosition: 'top center'}} />
         <div className="overlay">
           <div className="container">
             <div className="row centering-vh">
