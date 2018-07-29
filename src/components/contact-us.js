@@ -33,12 +33,6 @@ const ContactUs = () => (
               placeholder="Subject"
               required
             />
-            <input
-              type="hidden"
-              name="_subject"
-              value="Webpoint form submission!"
-              required
-            />
           </div>
           <div className="col-md-6">
             <textarea
