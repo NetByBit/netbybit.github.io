@@ -4,9 +4,9 @@ const handleSubmit = e => {
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: encode({ 'form-name': 'contact', name: 'Amr' }),
+    body: { 'form-name': 'contact', name: 'Amr' },
   })
-    .then(this.handleSuccess)
+    .then(console.log)
     .catch(error => alert(error))
   e.preventDefault()
 }
