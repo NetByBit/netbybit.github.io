@@ -14,7 +14,7 @@ const ContactUs = () => (
         name="contact"
         method="POST"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        // data-netlify-honeypot="bot-field"
       >
         <div className="row">
           <div className="col-md-6">
@@ -48,7 +48,7 @@ const ContactUs = () => (
             />
           </div>
         </div>
-        <input type="hidden" name="bot-field" />
+        {/* <input type="hidden" name="bot-field" /> */}
         <button className="btn btn-primary mt-md-3 mt-5">Send Message</button>
       </form>
     </div>
