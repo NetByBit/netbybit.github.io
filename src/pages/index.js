@@ -11,8 +11,8 @@ import WhyUs from '../components/why-us'
 import Features from '../components/features'
 import WhyHireUs from '../components/why-hire-us'
 import Freelancing from '../components/freelancing'
-import OurTeam from '../components/our-team';
-import ContactUs from '../components/contact-us';
+import OurTeam from '../components/our-team'
+import ContactUs from '../components/contact-us'
 
 const IndexPage = () => (
   <Layout>

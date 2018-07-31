@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import ScrollIntoView from 'react-scroll-into-view'
 import {
   Navbar,
   NavbarBrand,
@@ -30,6 +31,17 @@ class MyNavbar extends Component {
     })
   }
 
+  scrollToContent = content => {
+    switch (content) {
+      case 'whyUs':
+        console.log(this.props.compRefs.whyUs.current)
+        this.props.compRefs.whyUs.current.scrollIntoView({ behavior: 'smooth' })
+        break
+      case 2:
+        this.section2.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen,
@@ -48,18 +60,24 @@ class MyNavbar extends Component {
         onScroll={this.handleScroll}
       >
         <Container>
-          <NavbarBrand href="/" className="text-uppercase">
-            Web
-            <span className="text-primary">Point</span>
+          <NavbarBrand href="javascript:void(0)" className="text-uppercase">
+            <ScrollIntoView selector="#header">
+              Web
+              <span className="text-primary">Point</span>
+            </ScrollIntoView>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink data-value="why">Why Us?</NavLink>
+                <NavLink>
+                  <ScrollIntoView selector="#why">Why Us?</ScrollIntoView>
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink data-value="features">Features</NavLink>
+                <NavLink>
+                  <ScrollIntoView selector="#features">Features</ScrollIntoView>
+                </NavLink>
               </NavItem>
               <UncontrolledDropdown>
                 <DropdownToggle nav caret>
@@ -81,7 +99,9 @@ class MyNavbar extends Component {
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink>Contact</NavLink>
+                <NavLink>
+                  <ScrollIntoView selector="#contact">Contact</ScrollIntoView>
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>

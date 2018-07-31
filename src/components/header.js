@@ -20,7 +20,7 @@ const Header = () => (
       }
     `}
     render={data => (
-      <div className="header">
+      <div className="header" id="header">
         <Img
           fluid={data.contentfulHeader.backgroundImage.fluid}
           style={{ height: '100vh' }}
