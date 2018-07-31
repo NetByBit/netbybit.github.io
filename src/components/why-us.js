@@ -1,6 +1,9 @@
 import React from 'react'
+
 import chunck from 'lodash/chunk'
 import styled from 'styled-components'
+import { Row, Col } from 'reactstrap'
+
 import Section from './ui/section'
 
 const Icon = styled.i.attrs({
@@ -18,8 +21,8 @@ const icons = [
 
 const WhyUs = () => (
   <Section className="sublist" id="why">
-    <div className="row">
-      <div className="col-md">
+    <Row>
+      <Col md>
         <div className="list-info">
           <h3 className="h1 section-head head-border text-uppercase">
             Why us?
@@ -30,19 +33,19 @@ const WhyUs = () => (
             those? check our page to make sure yourself!
           </p>
         </div>
-      </div>
-      <div className="col-md icons">
+      </Col>
+      <Col md className="icons">
         {chunck(icons, 3).map(row => (
-          <div className="row text-center" key={row}>
+          <Row className="text-center" key={row}>
             {row.map(icon => (
-              <div className="col-4" key={icon}>
+              <Col xs="4" key={icon}>
                 <Icon className={icon} />
-              </div>
+              </Col>
             ))}
-          </div>
+          </Row>
         ))}
-      </div>
-    </div>
+      </Col>
+    </Row>
   </Section>
 )
 

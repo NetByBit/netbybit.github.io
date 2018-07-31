@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Row, Col } from 'reactstrap'
+
 import Freelancer from '../img/freelancer.svg'
 import Upwork from '../img/upwork.svg'
 import PPH from '../img/pph.svg'
@@ -26,15 +28,15 @@ const links = [
 
 const Freelancing = () => (
   <Section className="freelancing" title="Find Us On">
-    <div className="row align-items-center">
+    <Row className="align-items-center">
       {links.map(link => (
-        <div className="col-sm mb-4" key={link.name}>
+        <Col sm className="mb-4" key={link.name}>
           <a href={link.link}>
             <img src={link.img} alt={link.name} className="img-fluid" />
           </a>
-        </div>
+        </Col>
       ))}
-    </div>
+    </Row>
   </Section>
 )
 

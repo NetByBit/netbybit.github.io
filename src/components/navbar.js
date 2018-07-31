@@ -61,7 +61,7 @@ class MyNavbar extends Component {
               <NavItem>
                 <NavLink data-value="features">Features</NavLink>
               </NavItem>
-              <UncontrolledDropdown UncontrolledDropdown>
+              <UncontrolledDropdown>
                 <DropdownToggle nav caret>
                   Hire Us
                 </DropdownToggle>

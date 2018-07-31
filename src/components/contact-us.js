@@ -1,8 +1,9 @@
 import React from 'react'
-import Section from './ui/section'
-import styled from 'styled-components'
 
-const Input = styled.input.attrs({ className: 'form-control input-lg' })``
+import { Row, Col, Input, Button, Form } from 'reactstrap'
+
+import Section from './ui/section'
+
 
 const ContactUs = () => (
   <Section
@@ -11,42 +12,50 @@ const ContactUs = () => (
     title="Contact us"
     description="If you have any questions feel free to email us"
   >
-    <form
+    <Form
       className="contact"
       name="contact"
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
-      <div className="row">
-        <div className="col-md-6">
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="contact" />
+      <Row>
+        <Col md>
           <Input
             type="text"
             name="name"
             placeholder="Enter your name"
+            bsSize="lg"
             required
           />
-          <Input type="email" name="email" placeholder="Your e-mail" required />
           <Input
-            className="form-control input-lg"
+            type="email"
+            name="email"
+            placeholder="Your e-mail"
+            bsSize="lg"
+            required
+          />
+          <Input
             type="text"
             name="subject"
             placeholder="Subject"
+            bsSize="lg"
             required
           />
-        </div>
-        <div className="col-md-6">
-          <textarea
-            className="form-control input-lg"
+        </Col>
+        <Col md>
+          <Input
+            bsSize="lg"
+            type="textarea"
             placeholder="Enter your message here"
             name="message"
           />
-        </div>
-      </div>
-      <button className="btn btn-primary mt-md-3 mt-5">Send Message</button>
-    </form>
+        </Col>
+      </Row>
+      <Button color="primary" className="mt-md-3 mt-5">Send Message</Button>
+    </Form>
   </Section>
 )
 

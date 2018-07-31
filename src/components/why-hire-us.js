@@ -1,12 +1,15 @@
 import React from 'react'
+
+import { Row, Col } from 'reactstrap'
+
 import Section from './ui/section'
 
 const Feature = ({ icon, title, description }) => (
-  <div className="col-md feat-box">
+  <Col md className="feat-box">
     <i className={'fa-2x ' + icon} />
     <h3 className="feat-head">{title}</h3>
     <p className="text-muted">{description}</p>
-  </div>
+  </Col>
 )
 
 const WhyHireUs = () => (
@@ -21,7 +24,7 @@ const WhyHireUs = () => (
       </>
     }
   >
-    <div className="row">
+    <Row>
       <Feature
         icon="far fa-lightbulb"
         title="Thoughtful Design"
@@ -40,7 +43,7 @@ const WhyHireUs = () => (
         description="You could customize your page the way you want it and we will code it
         for you!"
       />
-    </div>
+    </Row>
   </Section>
 )
 

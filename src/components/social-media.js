@@ -2,6 +2,8 @@ import React from 'react'
 
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
+import { Row, Col } from 'reactstrap'
+
 import Section from './ui/section'
 
 const Icon = styled.i.attrs({
@@ -22,12 +24,12 @@ const SocialMedia = () => (
     `}
     render={data => (
       <Section className="social-section">
-        <div className="row">
-          <div className="col-md-4">
+        <Row>
+          <Col md="4">
             <h4>Social Media</h4>
             <p className="text-muted">{data.contentfulSocialMedia.subtitle}</p>
-          </div>
-          <div className="col-md-4 ml-auto">
+          </Col>
+          <Col md="4" className="ml-auto">
             <a href={data.contentfulSocialMedia.facebookLink}>
               <Icon className="fa-facebook-f" />
             </a>
@@ -37,8 +39,8 @@ const SocialMedia = () => (
             <a href={data.contentfulSocialMedia.githubLink}>
               <Icon className="fa-github" />
             </a>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </Section>
     )}
   />
