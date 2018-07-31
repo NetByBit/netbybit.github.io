@@ -5,7 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Web Point',
-    description: 'WebPoint is Freelacering Webpage, web design your Webpage, we develop professional sites and do prjects, fix bugs.find us on fiverr and upwork'
+    description: 'WebPoint is Freelancing Webpage, web design your Webpage, we develop professional sites and do prjects, fix bugs.find us on fiverr and upwork'
   },
   plugins: [
     {
