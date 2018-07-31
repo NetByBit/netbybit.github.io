@@ -1,5 +1,7 @@
 import React from 'react'
+
 import styled from 'styled-components'
+import { Container } from 'reactstrap'
 
 const Sectionbody = styled.div.attrs({ className: 'section' })``
 const SectionTitle = styled.h2.attrs({
@@ -11,11 +13,13 @@ const Section = ({ title, dir, children, description, ...props }) => {
     dir == 'center' ? 'head-border-center text-center' : 'head-border'
   return (
     <Sectionbody {...props}>
-      <div className="container">
+      <Container>
         {title && <SectionTitle className={titleClass}>{title}</SectionTitle>}
-        {description && <p className="section-desc text-center">{description}</p>}
+        {description && (
+          <p className="section-desc text-center">{description}</p>
+        )}
         {children}
-      </div>
+      </Container>
     </Sectionbody>
   )
 }

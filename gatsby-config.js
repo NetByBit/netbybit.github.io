@@ -36,7 +36,7 @@ module.exports = {
       resolve: 'gatsby-plugin-crisp-chat',
       options: {
         websiteId: process.env.CRISP_WEBSITE_ID,
-        enableDuringDevelop: true,
+        enableDuringDevelop: false,
       },
     },
     {
@@ -45,10 +45,9 @@ module.exports = {
         precision: 8,
       },
     },
-    'gatsby-plugin-purgecss',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-purgecss',
+    // 'gatsby-plugin-purgecss',
     'gatsby-plugin-netlify'
   ],
 }
