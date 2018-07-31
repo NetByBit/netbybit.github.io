@@ -1,81 +1,93 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Navbar = () => (
-  <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <div className="container">
-      <a className="navbar-brand text-uppercase" href="#">
-        Web<span className="text-primary">Point</span>
-      </a>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#axit-nav"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  Collapse,
+  Nav,
+  NavItem,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavLink,
+  Container,
+} from 'reactstrap'
+
+class MyNavbar extends Component {
+  state = {
+    isOpen: false,
+    scrolled: false,
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', () => {
+      const isTop = window.scrollY < 100
+      if (isTop !== this.state.isTop) {
+        this.setState({ scrolled: !isTop })
+      }
+    })
+  }
+
+  toggle = () => {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    })
+  }
+
+  render() {
+    const scrolled = this.state.scrolled ? 'scrolled' : ''
+    return (
+      <Navbar
+        color="dark"
+        dark
+        expand="md"
+        fixed="top"
+        className={scrolled}
+        onScroll={this.handleScroll}
       >
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div className="collapse navbar-collapse" id="axit-nav">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <a className="nav-link" data-value="why" href="#">
-              Why Us?
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-value="features" href="#">
-              Features
-            </a>
-          </li>
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Hire Us
-            </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a
-                className="dropdown-item"
-                href="https://www.fiverr.com/mostadawood"
-              >
-                Fiverr
-              </a>
-              <a
-                className="dropdown-item"
-                href="https://www.freelancer.com/u/MostafaDaoud"
-              >
-                Freelancer
-              </a>
-              <a
-                className="dropdown-item"
-                href="https://www.upwork.com/freelancers/~011ed407c20ef1c7b0"
-              >
-                Upwork
-              </a>
-              <a
-                className="dropdown-item"
-                href="https://www.peopleperhour.com/freelancer/mostafa/web-designer/1774022"
-              >
-                peopleperhour
-              </a>
-            </div>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-value="contact" href="#">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-)
-
-export default Navbar
+        <Container>
+          <NavbarBrand href="/" className="text-uppercase">
+            Web
+            <span className="text-primary">Point</span>
+          </NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink data-value="why">Why Us?</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink data-value="features">Features</NavLink>
+              </NavItem>
+              <UncontrolledDropdown UncontrolledDropdown>
+                <DropdownToggle nav caret>
+                  Hire Us
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem href="https://www.fiverr.com/mostadawood">
+                    Fiverr
+                  </DropdownItem>
+                  <DropdownItem href="https://www.freelancer.com/u/MostafaDaoud">
+                    Freelancer
+                  </DropdownItem>
+                  <DropdownItem href="https://www.upwork.com/freelancers/~011ed407c20ef1c7b0">
+                    Upwork
+                  </DropdownItem>
+                  <DropdownItem href="https://www.peopleperhour.com/freelancer/mostafa/web-designer/1774022">
+                    peopleperhour
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink>Contact</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Container>
+      </Navbar>
+    )
+  }
+}
+export default MyNavbar
