@@ -20,7 +20,6 @@
     "gatsby-plugin-sass": "^2.0.0-beta.6",
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-styled-components": "next",
-    "gatsby-source-contentful": "next",
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-sharp": "next",
     "i18next": "^11.5.0",

@@ -97,7 +97,9 @@ class MyNavbar extends Component {
               </UncontrolledDropdown>
               <NavItem>
                 <NavLink>
-                  <ScrollIntoView selector="#contact">{t('contact')}</ScrollIntoView>
+                  <ScrollIntoView selector="#contact">
+                    {t('contact')}
+                  </ScrollIntoView>
                 </NavLink>
               </NavItem>
               <LanguageSwitcher />
