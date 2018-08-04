@@ -15,6 +15,9 @@ import {
   NavLink,
   Container,
 } from 'reactstrap'
+import { translate } from 'react-i18next'
+
+import LanguageSwitcher from './language-switcher'
 
 class MyNavbar extends Component {
   state = {
@@ -31,17 +34,6 @@ class MyNavbar extends Component {
     })
   }
 
-  scrollToContent = content => {
-    switch (content) {
-      case 'whyUs':
-        console.log(this.props.compRefs.whyUs.current)
-        this.props.compRefs.whyUs.current.scrollIntoView({ behavior: 'smooth' })
-        break
-      case 2:
-        this.section2.current.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen,
@@ -50,6 +42,8 @@ class MyNavbar extends Component {
 
   render() {
     const scrolled = this.state.scrolled ? 'scrolled' : ''
+    const { t, i18n } = this.props
+    const marginDir = i18n.language === 'ar' ? 'mr-auto' : 'ml-auto'
     return (
       <Navbar
         color="dark"
@@ -69,20 +63,22 @@ class MyNavbar extends Component {
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className={marginDir} navbar>
               <NavItem>
                 <NavLink>
-                  <ScrollIntoView selector="#why">Why Us?</ScrollIntoView>
+                  <ScrollIntoView selector="#why">{t('why-us')}</ScrollIntoView>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <ScrollIntoView selector="#features">Features</ScrollIntoView>
+                  <ScrollIntoView selector="#features">
+                    {t('features')}
+                  </ScrollIntoView>
                 </NavLink>
               </NavItem>
               <UncontrolledDropdown>
                 <DropdownToggle nav caret>
-                  Hire Us
+                  {t('hire-us')}
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem href="https://www.fiverr.com/mostadawood">
@@ -101,9 +97,10 @@ class MyNavbar extends Component {
               </UncontrolledDropdown>
               <NavItem>
                 <NavLink>
-                  <ScrollIntoView selector="#contact">Contact</ScrollIntoView>
+                  <ScrollIntoView selector="#contact">{t('contact')}</ScrollIntoView>
                 </NavLink>
               </NavItem>
+              <LanguageSwitcher />
             </Nav>
           </Collapse>
         </Container>
@@ -111,4 +108,4 @@ class MyNavbar extends Component {
     )
   }
 }
-export default MyNavbar
+export default translate('navbar')(MyNavbar)

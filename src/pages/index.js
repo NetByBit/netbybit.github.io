@@ -3,6 +3,7 @@ import React from 'react'
 import '../styles/app.scss'
 import 'devicon/devicon.css'
 import 'devicon/devicon-colors.css'
+import '../i18n'
 
 import Layout from '../components/layout'
 import Header from '../components/header'

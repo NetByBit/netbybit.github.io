@@ -1,15 +1,16 @@
 import React from 'react'
 
 import { Row, Col, Input, Button, Form } from 'reactstrap'
+import { translate } from 'react-i18next'
 
 import Section from './ui/section'
 
-const ContactUs = () => (
+const ContactUs = ({ t }) => (
   <Section
     className="contact-us"
     id="contact"
-    title="Contact us"
-    description="If you have any questions feel free to email us"
+    title={t('title')}
+    description={t('description')}
   >
     <Form
       className="contact"
@@ -25,21 +26,21 @@ const ContactUs = () => (
           <Input
             type="text"
             name="name"
-            placeholder="Enter your name"
+            placeholder={t('name-placeholder')}
             bsSize="lg"
             required
           />
           <Input
             type="email"
             name="email"
-            placeholder="Your e-mail"
+            placeholder={t('email-placeholder')}
             bsSize="lg"
             required
           />
           <Input
             type="text"
             name="subject"
-            placeholder="Subject"
+            placeholder={t('subject-placeholder')}
             bsSize="lg"
             required
           />
@@ -48,16 +49,16 @@ const ContactUs = () => (
           <Input
             bsSize="lg"
             type="textarea"
-            placeholder="Enter your message here"
+            placeholder={t('message-placeholder')}
             name="message"
           />
         </Col>
       </Row>
       <Button color="primary" className="mt-md-3 mt-5">
-        Send Message
+        {t('send')}
       </Button>
     </Form>
   </Section>
 )
 
-export default ContactUs
+export default translate('contact')(ContactUs)

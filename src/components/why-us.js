@@ -3,6 +3,7 @@ import React from 'react'
 import chunck from 'lodash/chunk'
 import styled from 'styled-components'
 import { Row, Col } from 'reactstrap'
+import { translate } from 'react-i18next'
 
 import Section from './ui/section'
 
@@ -19,19 +20,15 @@ const icons = [
   'devicon-react-original',
 ]
 
-const WhyUs = () => (
+const WhyUs = ({ t }) => (
   <Section className="sublist" id="why">
     <Row>
       <Col md>
         <div className="list-info">
           <h3 className="h1 section-head head-border text-uppercase">
-            Why us?
+            {t('title')}
           </h3>
-          <p className="section-desc">
-            You don't have to overpay a PROFESSIONAL to get your work done, you
-            could develop a professional website or landing page using just
-            those? check our page to make sure yourself!
-          </p>
+          <p className="section-desc">{t('description')}</p>
         </div>
       </Col>
       <Col md className="icons">
@@ -49,4 +46,4 @@ const WhyUs = () => (
   </Section>
 )
 
-export default WhyUs
+export default translate('why-us')(WhyUs)

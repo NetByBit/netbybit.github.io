@@ -10,7 +10,7 @@ const SectionTitle = styled.h2.attrs({
 
 const Section = ({ title, dir, children, description, ...props }) => {
   const titleClass =
-    dir == 'center' ? 'head-border-center text-center' : 'head-border'
+    dir === 'center' ? 'head-border-center text-center' : 'head-border'
   return (
     <Sectionbody {...props}>
       <Container>

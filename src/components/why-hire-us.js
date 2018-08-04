@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Row, Col } from 'reactstrap'
+import { translate } from 'react-i18next'
 
 import Section from './ui/section'
 
@@ -12,39 +13,36 @@ const Feature = ({ icon, title, description }) => (
   </Col>
 )
 
-const WhyHireUs = () => (
+const WhyHireUs = ({ t }) => (
   <Section
     className="awesome text-center"
-    title="Why To Hire Us!?"
+    title={t('title')}
     description={
       <>
-        You're not 100% sure we are the right people to Hire?
+        {t('subtitle')}
         <br />
-        <span className="text-primary">We Offer!</span>
+        <span className="text-primary">{t('we-offer')}</span>
       </>
     }
   >
     <Row>
       <Feature
         icon="far fa-lightbulb"
-        title="Thoughtful Design"
-        description="We Design Fresh ideas, and always work on OUT-OF-THE-BOX designs to
-          satisfy our customer!"
+        title={t('thoughtful-design')}
+        description={t('thoughtful-design-description')}
       />
       <Feature
         icon="far fa-keyboard"
-        title="Well Crafted"
-        description="We write every single code ourselves to make sure it runs like
-        intended!"
+        title={t('well-crafted')}
+        description={t('well-crafted-description')}
       />
       <Feature
         icon="fas fa-bolt"
-        title="Easy To Customize"
-        description="You could customize your page the way you want it and we will code it
-        for you!"
+        title={t('easy-to-customize')}
+        description={t('easy-to-customize-description')}
       />
     </Row>
   </Section>
 )
 
-export default WhyHireUs
+export default translate('why-hire-us')(WhyHireUs)

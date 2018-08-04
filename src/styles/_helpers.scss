@@ -1,5 +1,5 @@
 .scrolled {
-  background-color: rgba(0, 0, 0, .8) !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
 }
 
 .head-border:after {
@@ -48,4 +48,8 @@
     margin-bottom: 30px;
     font-size: large;
   }
+}
+
+[dir='rtl'] {
+  text-align: right;
 }

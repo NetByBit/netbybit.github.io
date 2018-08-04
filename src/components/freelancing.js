@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Row, Col } from 'reactstrap'
+import { translate } from 'react-i18next'
 
 import Freelancer from '../img/freelancer.svg'
 import Upwork from '../img/upwork.svg'
@@ -26,8 +27,8 @@ const links = [
   },
 ]
 
-const Freelancing = () => (
-  <Section className="freelancing" title="Find Us On">
+const Freelancing = ({ t }) => (
+  <Section className="freelancing" title={t('title')}>
     <Row className="align-items-center">
       {links.map(link => (
         <Col sm className="mb-4" key={link.name}>
@@ -40,4 +41,4 @@ const Freelancing = () => (
   </Section>
 )
 
-export default Freelancing
+export default translate('freelancing')(Freelancing)
