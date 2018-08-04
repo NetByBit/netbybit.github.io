@@ -31,8 +31,7 @@ const Header = () => (
             <Row className="centering-vh">
               <Col md="8" lg="6">
                 <h1 className="text-uppercase text-md-left text-center">
-                  Web
-                  <span className="text-primary">Point</span>
+                  <span className="text-primary">Granet</span>
                 </h1>
                 <p className="lead text-uppercase text-md-left text-center">
                   {data.contentfulHeader.description}

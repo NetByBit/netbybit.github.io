@@ -4,8 +4,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Web Point',
-    description: 'WebPoint is Freelancing Webpage, web design your Webpage, we develop professional sites and do prjects, fix bugs.find us on fiverr and upwork'
+    title: 'Granet',
+    description:
+      'Granet is Freelancing Webpage, web design your Webpage, we develop professional sites and do prjects, fix bugs.find us on fiverr and upwork',
   },
   plugins: [
     {
@@ -48,6 +49,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     // 'gatsby-plugin-purgecss',
-    'gatsby-plugin-netlify'
+    'gatsby-plugin-netlify',
   ],
 }

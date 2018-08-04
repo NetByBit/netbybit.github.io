@@ -4,7 +4,6 @@ import { Row, Col, Input, Button, Form } from 'reactstrap'
 
 import Section from './ui/section'
 
-
 const ContactUs = () => (
   <Section
     className="contact-us"
@@ -54,7 +53,9 @@ const ContactUs = () => (
           />
         </Col>
       </Row>
-      <Button color="primary" className="mt-md-3 mt-5">Send Message</Button>
+      <Button color="primary" className="mt-md-3 mt-5">
+        Send Message
+      </Button>
     </Form>
   </Section>
 )
