@@ -4,9 +4,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Granet',
+    title: 'NetByBit',
     description:
-      'Granet is Freelancing Webpage, web design your Webpage, we develop professional sites and do prjects, fix bugs.find us on fiverr and upwork',
+      'NetByBit is Freelancing Webpage, web design your Webpage, we develop professional sites and do prjects, fix bugs.find us on fiverr and upwork',
   },
   plugins: [
     {

@@ -62,7 +62,9 @@ class MyNavbar extends Component {
         <Container>
           <NavbarBrand href="javascript:void(0)" className="text-uppercase">
             <ScrollIntoView selector="#header">
-              <span className="text-primary">Granet</span>
+              Net
+              <span className="text-primary">By</span>
+              Bit
             </ScrollIntoView>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
