@@ -12,6 +12,7 @@ const Layout = ({ i18n, t, children }) => {
       <Helmet>
         <title>{t('title')}</title>
         <meta name="description" content={t('description')} />
+        <meta name="google-site-verification" content="fsB3nFriPOvHe9YQuLMCUPq8actppq0LKN2K8Bzwzcg" />
       </Helmet>
       <div dir={dir}>
         <Navbar />
