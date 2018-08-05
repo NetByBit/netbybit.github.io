@@ -11,11 +11,11 @@ const Layout = ({ i18n, children }) => {
   return (
     <>
       <Helmet
-        title={i18n.t('seo:title')}
+        title={t('seo:title')}
         meta={[
           {
             name: 'description',
-            content: i18n.t('seo:description'),
+            content: t('seo:description'),
           },
           // { name: 'keywords', content: 'sample, something' },
         ]}
