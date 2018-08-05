@@ -7,19 +7,12 @@ import Navbar from './navbar'
 
 const Layout = ({ i18n, t, children }) => {
   const dir = i18n.language === 'ar' ? 'rtl' : 'ltr'
-  console.log(i18n.language)
   return (
     <>
-      <Helmet
-        title={t('title')}
-        meta={[
-          {
-            name: 'description',
-            content: t('description'),
-          },
-          // { name: 'keywords', content: 'sample, something' },
-        ]}
-      />
+      <Helmet>
+        <title>{t('title')}</title>
+        <meta name="description" content={t('description')} />
+      </Helmet>
       <div dir={dir}>
         <Navbar />
         {children}
