@@ -9,12 +9,10 @@ i18n
   .use(reactI18nextModule)
   .init({
     fallbackLng: false,
-    // have a common namespace used around the full app
-    ns: ['en-US', 'ar'],
-    defaultNS: 'translations',
     interpolation: {
       escapeValue: false, // not needed for react!!
     },
+
     react: {
       wait: true,
     },

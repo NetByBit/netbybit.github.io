@@ -5,7 +5,6 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
-    "babel-plugin-styled-components": "^1.5.1",
     "bootstrap": "^4.1.3",
     "devicon": "^2.0.0",
     "dotenv": "^6.0.0",
@@ -19,11 +18,11 @@
     "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-sass": "^2.0.0-beta.6",
     "gatsby-plugin-sharp": "next",
-    "gatsby-plugin-styled-components": "next",
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-sharp": "next",
     "i18next": "^11.5.0",
     "i18next-browser-languagedetector": "^2.2.3",
+    "i18next-node-fs-backend": "^1.2.1",
     "i18next-xhr-backend": "^1.5.1",
     "lodash": "^4.17.10",
     "node-sass": "^4.9.2",
@@ -32,8 +31,7 @@
     "react-helmet": "^5.2.0",
     "react-i18next": "^7.10.1",
     "react-scroll-into-view": "^1.3.1",
-    "reactstrap": "^6.3.1",
-    "styled-components": "^3.3.3"
+    "reactstrap": "^6.3.1"
   },
   "keywords": [
     "gatsby"

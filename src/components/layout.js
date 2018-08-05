@@ -1,21 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
 import { translate } from 'react-i18next'
 
 import Navbar from './navbar'
 
-const Layout = ({ t, i18n, children }) => {
+const Layout = ({ i18n, children }) => {
   const dir = i18n.language === 'ar' ? 'rtl' : 'ltr'
+  console.log(i18n.language)
   return (
     <>
       <Helmet
-        title={t('title')}
+        title={i18n.t('seo:title')}
         meta={[
           {
             name: 'description',
-            content: t('description'),
+            content: i18n.t('seo:description'),
           },
           // { name: 'keywords', content: 'sample, something' },
         ]}

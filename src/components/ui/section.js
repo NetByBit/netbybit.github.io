@@ -1,12 +1,17 @@
 import React from 'react'
 
-import styled from 'styled-components'
 import { Container } from 'reactstrap'
 
-const Sectionbody = styled.div.attrs({ className: 'section' })``
-const SectionTitle = styled.h2.attrs({
-  className: 'section-head h1 text-uppercase',
-})``
+const Sectionbody = ({ children, className, ...props }) => (
+  <div className={`section ${className}`} {...props}>
+    {children}
+  </div>
+)
+const SectionTitle = ({ children, className, ...props }) => (
+  <h2 className={`section-head h1 text-uppercase ${className}`} {...props}>
+    {children}
+  </h2>
+)
 
 const Section = ({ title, dir, children, description, ...props }) => {
   const titleClass =

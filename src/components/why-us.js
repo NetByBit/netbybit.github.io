@@ -1,15 +1,14 @@
 import React from 'react'
 
 import chunck from 'lodash/chunk'
-import styled from 'styled-components'
 import { Row, Col } from 'reactstrap'
 import { translate } from 'react-i18next'
 
 import Section from './ui/section'
 
-const Icon = styled.i.attrs({
-  className: 'colored',
-})``
+const Icon = ({ className }) => (
+  <i className={`colored ${className}`} />
+)
 
 const icons = [
   'devicon-html5-plain',

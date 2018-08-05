@@ -5,7 +5,6 @@ import { translate } from 'react-i18next'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Responsive from '../img/web-design-min.jpg'
 import Section from './ui/section'
 
 const Features = ({ t }) => (

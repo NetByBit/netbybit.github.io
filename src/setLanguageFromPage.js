@@ -9,7 +9,7 @@ export default function setLanguageFromPage() {
   return WrappedComponent =>
     class extends React.PureComponent {
       static propTypes = {
-        pathContext: PropTypes.shape({
+        pageContext: PropTypes.shape({
           language: PropTypes.string.isRequired,
         }),
       }

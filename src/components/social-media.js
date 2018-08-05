@@ -1,14 +1,13 @@
 import React from 'react'
 
-import styled from 'styled-components'
 import { Row, Col } from 'reactstrap'
 import { translate } from 'react-i18next'
 
 import Section from './ui/section'
 
-const Icon = styled.i.attrs({
-  className: 'fab fa-3x fa-fw',
-})``
+const Icon = ({ className }) => (
+  <i className={`fab fa-3x fa-fw ${className}`} />
+)
 
 const SocialMedia = ({ t, i18n }) => {
   const marginDir = i18n.language === 'ar' ? 'mr-auto' : 'ml-auto'

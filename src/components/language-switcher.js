@@ -12,14 +12,14 @@ import { Link } from 'gatsby'
 
 const LanguageSwitcher = ({ i18n }) => {
   const languages = [
-    { code: 'en-US', label: 'English', shortname: 'en', link: '/' },
-    { code: 'ar', label: 'العربية', shortname: 'ar', link: '/ar' },
+    { code: 'en', label: 'English', link: '/' },
+    { code: 'ar', label: 'العربية', link: '/ar' },
   ]
 
   return (
     <UncontrolledDropdown>
       <DropdownToggle nav caret>
-        {languages.find(lang => lang.code === i18n.language).shortname}
+        {i18n.language}
       </DropdownToggle>
       <DropdownMenu>
         {languages.map(({ code, label, link }) => (
