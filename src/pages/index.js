@@ -14,6 +14,7 @@ import WhyHireUs from '../components/why-hire-us'
 import Freelancing from '../components/freelancing'
 import OurTeam from '../components/our-team'
 import ContactUs from '../components/contact-us'
+import setLanguageFromPage from '../setLanguageFromPage'
 
 const IndexPage = () => (
   <Layout>
@@ -28,4 +29,4 @@ const IndexPage = () => (
   </Layout>
 )
 
-export default IndexPage
+export default setLanguageFromPage()(IndexPage)
