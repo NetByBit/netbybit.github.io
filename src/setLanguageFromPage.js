@@ -29,6 +29,21 @@ export default function setLanguageFromPage() {
         }
       }
 
+      componentDidUpdate() {
+        const currentLanguage = i18n.language
+        const pageLanguage = this.props.pageContext.locale
+
+        // First request
+        if (!currentLanguage) {
+          i18n.language = pageLanguage
+        }
+
+        // Only update on language change
+        if (currentLanguage !== pageLanguage) {
+          i18n.changeLanguage(pageLanguage)
+        }
+      }
+
       render() {
         return <WrappedComponent {...this.props} />
       }

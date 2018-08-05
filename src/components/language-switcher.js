@@ -8,55 +8,28 @@ import {
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap'
+import { Link } from 'gatsby'
 
-class LanguageSwitcher extends Component {
-  constructor(props) {
-    super(props)
-    const { i18n } = this.props
-    this.state = { language: i18n.language }
-  }
+const LanguageSwitcher = ({ i18n }) => {
+  const languages = [
+    { code: 'en-US', label: 'English', shortname: 'en', link: '/' },
+    { code: 'ar', label: 'العربية', shortname: 'ar', link: '/ar' },
+  ]
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    this.setState({ language: nextProps.i18n.language })
-  }
-
-  handleChangeLanguage = lng => {
-    const { i18n } = this.props
-    i18n.changeLanguage(lng)
-  }
-
-  renderLanguageChoice({ code, label }) {
-    return (
-      <DropdownItem key={code} onClick={() => this.handleChangeLanguage(code)}>
-        {label}
-      </DropdownItem>
-    )
-  }
-
-  render() {
-    const languages = [
-      { code: 'en-US', label: 'English', shortname: 'en' },
-      { code: 'ar', label: 'العربية', shortname: 'ar' },
-    ]
-
-    return (
-      <UncontrolledDropdown>
-        <DropdownToggle nav caret>
-          {languages.find(lang => lang.code === this.state.language).shortname}
-        </DropdownToggle>
-        <DropdownMenu>
-          {languages.map(({ code, label }) => (
-            <DropdownItem
-              key={code}
-              onClick={() => this.handleChangeLanguage(code)}
-            >
-              {label}
-            </DropdownItem>
-          ))}
-        </DropdownMenu>
-      </UncontrolledDropdown>
-    )
-  }
+  return (
+    <UncontrolledDropdown>
+      <DropdownToggle nav caret>
+        {languages.find(lang => lang.code === i18n.language).shortname}
+      </DropdownToggle>
+      <DropdownMenu>
+        {languages.map(({ code, label, link }) => (
+          <DropdownItem key={code} tag={Link} to={link}>
+            {label}
+          </DropdownItem>
+        ))}
+      </DropdownMenu>
+    </UncontrolledDropdown>
+  )
 }
 
 export default translate()(LanguageSwitcher)
