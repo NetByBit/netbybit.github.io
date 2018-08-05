@@ -5,7 +5,7 @@ import { translate } from 'react-i18next'
 
 import Navbar from './navbar'
 
-const Layout = ({ i18n, children }) => {
+const Layout = ({ i18n, t, children }) => {
   const dir = i18n.language === 'ar' ? 'rtl' : 'ltr'
   console.log(i18n.language)
   return (
