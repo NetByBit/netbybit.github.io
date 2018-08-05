@@ -15,7 +15,7 @@ const Layout = ({ t, i18n, children }) => {
         meta={[
           {
             name: 'description',
-            content: t('data.site.siteMetadata.description'),
+            content: t('description'),
           },
           // { name: 'keywords', content: 'sample, something' },
         ]}
