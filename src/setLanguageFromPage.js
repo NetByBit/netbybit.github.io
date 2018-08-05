@@ -20,7 +20,7 @@ export default function setLanguageFromPage() {
 
         // First request
         if (!currentLanguage) {
-          i18n.language = pageLanguage
+          i18n.changeLanguage(pageLanguage)
         }
 
         // Only update on language change

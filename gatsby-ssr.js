@@ -5,16 +5,3 @@
  */
 
 // You can delete this file if you're not using it
-
-import React from 'react'
-import { renderToString } from 'react-dom/server'
-import { I18nextProvider } from 'react-i18next'
-
-import i18n from './src/i18n'
-
-export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
-  const ConnectedBody = () => (
-    <I18nextProvider i18n={i18n}>{bodyComponent}</I18nextProvider>
-  )
-  replaceBodyHTMLString(renderToString(<ConnectedBody />))
-}
