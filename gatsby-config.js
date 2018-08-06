@@ -3,17 +3,13 @@ require('dotenv').config({
 })
 
 module.exports = {
-  siteMetadata: {
-    title: 'NetByBit',
-    description:
-      'NetByBit is Freelancing Webpage, web design your Webpage, we develop professional sites and do prjects, fix bugs.find us on fiverr and upwork',
-  },
   plugins: [
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
           'Audiowide',
+          'Cairo',
           'open sans', // you can also specify font weights and styles
         ],
       },
