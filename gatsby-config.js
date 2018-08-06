@@ -45,6 +45,5 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     // 'gatsby-plugin-purgecss',
     'gatsby-plugin-netlify',
-    'gatsby-plugin-netlify-cache',
   ],
 }
