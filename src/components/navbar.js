@@ -74,7 +74,8 @@ class MyNavbar extends Component {
             >
               <Container>
                 <NavbarBrand
-                  href="javascript:void(0)"
+                  href=""
+                  onClick={e => e.preventDefault()}
                   className="text-uppercase"
                 >
                   <ScrollIntoView selector="#header">

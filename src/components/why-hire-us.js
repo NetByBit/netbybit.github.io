@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Row, Col } from 'reactstrap'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Section from './ui/section'
 
@@ -13,70 +13,50 @@ const Feature = ({ icon, title, description }) => (
   </Col>
 )
 
-const WhyHireUs = ({ t, locale }) => (
-  <StaticQuery
-    query={graphql`
-      query WhyHireUsQuery {
-        en: contentfulWhyHireUs(node_locale: { eq: "en-US" }) {
-          title
-          description
-          weOffer
-          thoughtfulDesign
-          thoughtfulDesignDescription
-          wellCrafted
-          wellCraftedDescription
-          easyToCustomize
-          easyToCustomizeDescription
-        }
-        ar: contentfulWhyHireUs(node_locale: { eq: "ar" }) {
-          title
-          description
-          weOffer
-          thoughtfulDesign
-          thoughtfulDesignDescription
-          wellCrafted
-          wellCraftedDescription
-          easyToCustomize
-          easyToCustomizeDescription
-        }
-      }
-    `}
-    render={data => {
-      const langData = locale === 'ar' ? data.ar : data.en
-
-      return (
-        <Section
-          className="awesome text-center"
-          title={langData.title}
-          description={
-            <>
-              {langData.description}
-              <br />
-              <span className="text-primary">{langData.weOffer}</span>
-            </>
-          }
-        >
-          <Row>
-            <Feature
-              icon="far fa-lightbulb"
-              title={langData.thoughtfulDesign}
-              description={langData.thoughtfulDesignDescription}
-            />
-            <Feature
-              icon="far fa-keyboard"
-              title={langData.wellCrafted}
-              description={langData.wellCraftedDescription}
-            />
-            <Feature
-              icon="fas fa-bolt"
-              title={langData.easyToCustomize}
-              description={langData.easyToCustomizeDescription}
-            />
-          </Row>
-        </Section>
-      )
-    }}
-  />
+const WhyHireUs = ({ data }) => (
+  <Section
+    className="awesome text-center"
+    title={data.title}
+    description={
+      <>
+        {data.description}
+        <br />
+        <span className="text-primary">{data.weOffer}</span>
+      </>
+    }
+  >
+    <Row>
+      <Feature
+        icon="far fa-lightbulb"
+        title={data.thoughtfulDesign}
+        description={data.thoughtfulDesignDescription}
+      />
+      <Feature
+        icon="far fa-keyboard"
+        title={data.wellCrafted}
+        description={data.wellCraftedDescription}
+      />
+      <Feature
+        icon="fas fa-bolt"
+        title={data.easyToCustomize}
+        description={data.easyToCustomizeDescription}
+      />
+    </Row>
+  </Section>
 )
 
 export default WhyHireUs
+
+export const whyHireUsFragment = graphql`
+  fragment WhyHireUs on ContentfulWhyHireUs {
+    title
+    description
+    weOffer
+    thoughtfulDesign
+    thoughtfulDesignDescription
+    wellCrafted
+    wellCraftedDescription
+    easyToCustomize
+    easyToCustomizeDescription
+  }
+`
