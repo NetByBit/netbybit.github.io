@@ -3,9 +3,10 @@ import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import { Row, Col, Container, Button } from 'reactstrap'
 
-const Header = ({ locale, data }) => {
-  const textDir = locale === 'ar' ? 'text-md-right' : 'text-md-left'
+import { withLocale } from '../localeContext'
 
+const Header = ({ data, locale }) => {
+  const textDir = locale === 'ar' ? 'text-md-right' : 'text-md-left'
   return (
     <div className="header" id="header">
       <Img
@@ -43,7 +44,7 @@ const Header = ({ locale, data }) => {
   )
 }
 
-export default Header
+export default withLocale(Header)
 
 export const headerFragment = graphql`
   fragment Header on ContentfulHeader {

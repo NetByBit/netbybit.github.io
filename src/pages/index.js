@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 
 import '../styles/app.scss'
@@ -14,24 +14,43 @@ import WhyHireUs from '../components/why-hire-us'
 import Freelancing from '../components/freelancing'
 import OurTeam from '../components/our-team'
 import ContactUs from '../components/contact-us'
+import LocaleContext from '../localeContext'
 
-const IndexPage = ({ pageContext, data }) => (
-  <Layout data={data.contentfulSeo} locale={pageContext.locale}>
-    <Header data={data.contentfulHeader} locale={pageContext.locale} />
-    <SocialMedia
-      data={data.contentfulSocialMedia}
-      locale={pageContext.locale}
-    />
-    <WhyUs data={data.contentfulWhyUs} />
-    <Features data={data.contentfulFeatures} />
-    <WhyHireUs data={data.contentfulWhyHireUs} />
-    <Freelancing data={data.contentfulFreelancing} />
-    <OurTeam data={data.contentfulOurTeam} />
-    <ContactUs data={data.contentfulContact} />
-  </Layout>
-)
+class IndexPage extends Component {
+  state = {
+    locale: '',
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.pageContext.locale !== state.locale) {
+      return {
+        locale: props.pageContext.locale,
+      }
+    }
+    return null
+  }
+
+  render() {
+    const { data } = this.props
+    return (
+      <LocaleContext.Provider value={this.state.locale}>
+        <Layout data={data.contentfulSeo}>
+          <Header data={data.contentfulHeader} />
+          <SocialMedia data={data.contentfulSocialMedia} />
+          <WhyUs data={data.contentfulWhyUs} />
+          <Features data={data.contentfulFeatures} />
+          <WhyHireUs data={data.contentfulWhyHireUs} />
+          <Freelancing data={data.contentfulFreelancing} />
+          <OurTeam data={data.contentfulOurTeam} />
+          <ContactUs data={data.contentfulContact} />
+        </Layout>
+      </LocaleContext.Provider>
+    )
+  }
+}
 
 export default IndexPage
+// export default withLocale(IndexPage)
 
 export const query = graphql`
   query indexPageQuery($locale: String) {

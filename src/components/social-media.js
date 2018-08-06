@@ -3,10 +3,11 @@ import { Row, Col } from 'reactstrap'
 import { graphql } from 'gatsby'
 
 import Section from './ui/section'
+import { withLocale } from '../localeContext'
 
 const Icon = ({ className }) => <i className={`fab fa-3x fa-fw ${className}`} />
 
-const SocialMedia = ({ locale, data }) => {
+const SocialMedia = ({ data, locale }) => {
   const marginDir = locale === 'ar' ? 'mr-auto' : 'ml-auto'
   return (
     <Section className="social-section">
@@ -31,7 +32,7 @@ const SocialMedia = ({ locale, data }) => {
   )
 }
 
-export default SocialMedia
+export default withLocale(SocialMedia)
 
 export const socialMediaFragment = graphql`
   fragment SocialMedia on ContentfulSocialMedia {
