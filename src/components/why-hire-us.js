@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Row, Col } from 'reactstrap'
-import { translate } from 'react-i18next'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Section from './ui/section'
 
@@ -13,36 +13,70 @@ const Feature = ({ icon, title, description }) => (
   </Col>
 )
 
-const WhyHireUs = ({ t }) => (
-  <Section
-    className="awesome text-center"
-    title={t('title')}
-    description={
-      <>
-        {t('subtitle')}
-        <br />
-        <span className="text-primary">{t('we-offer')}</span>
-      </>
-    }
-  >
-    <Row>
-      <Feature
-        icon="far fa-lightbulb"
-        title={t('thoughtful-design')}
-        description={t('thoughtful-design-description')}
-      />
-      <Feature
-        icon="far fa-keyboard"
-        title={t('well-crafted')}
-        description={t('well-crafted-description')}
-      />
-      <Feature
-        icon="fas fa-bolt"
-        title={t('easy-to-customize')}
-        description={t('easy-to-customize-description')}
-      />
-    </Row>
-  </Section>
+const WhyHireUs = ({ t, locale }) => (
+  <StaticQuery
+    query={graphql`
+      query WhyHireUsQuery {
+        en: contentfulWhyHireUs(node_locale: { eq: "en-US" }) {
+          title
+          description
+          weOffer
+          thoughtfulDesign
+          thoughtfulDesignDescription
+          wellCrafted
+          wellCraftedDescription
+          easyToCustomize
+          easyToCustomizeDescription
+        }
+        ar: contentfulWhyHireUs(node_locale: { eq: "ar" }) {
+          title
+          description
+          weOffer
+          thoughtfulDesign
+          thoughtfulDesignDescription
+          wellCrafted
+          wellCraftedDescription
+          easyToCustomize
+          easyToCustomizeDescription
+        }
+      }
+    `}
+    render={data => {
+      const langData = locale === 'ar' ? data.ar : data.en
+
+      return (
+        <Section
+          className="awesome text-center"
+          title={langData.title}
+          description={
+            <>
+              {langData.description}
+              <br />
+              <span className="text-primary">{langData.weOffer}</span>
+            </>
+          }
+        >
+          <Row>
+            <Feature
+              icon="far fa-lightbulb"
+              title={langData.thoughtfulDesign}
+              description={langData.thoughtfulDesignDescription}
+            />
+            <Feature
+              icon="far fa-keyboard"
+              title={langData.wellCrafted}
+              description={langData.wellCraftedDescription}
+            />
+            <Feature
+              icon="fas fa-bolt"
+              title={langData.easyToCustomize}
+              description={langData.easyToCustomizeDescription}
+            />
+          </Row>
+        </Section>
+      )
+    }}
+  />
 )
 
-export default translate('why-hire-us')(WhyHireUs)
+export default WhyHireUs

@@ -1,6 +1,4 @@
-import React, { Component } from 'react'
-
-import { translate } from 'react-i18next'
+import React from 'react'
 
 import {
   UncontrolledDropdown,
@@ -10,7 +8,7 @@ import {
 } from 'reactstrap'
 import { Link } from 'gatsby'
 
-const LanguageSwitcher = ({ i18n }) => {
+const LanguageSwitcher = ({ locale }) => {
   const languages = [
     { code: 'en', label: 'English', link: '/' },
     { code: 'ar', label: 'العربية', link: '/ar' },
@@ -19,7 +17,7 @@ const LanguageSwitcher = ({ i18n }) => {
   return (
     <UncontrolledDropdown>
       <DropdownToggle nav caret>
-        {i18n.language}
+        {locale}
       </DropdownToggle>
       <DropdownMenu>
         {languages.map(({ code, label, link }) => (
@@ -32,4 +30,4 @@ const LanguageSwitcher = ({ i18n }) => {
   )
 }
 
-export default translate()(LanguageSwitcher)
+export default LanguageSwitcher

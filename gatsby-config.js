@@ -19,18 +19,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/img/`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-18396819-5',
         head: true,
         respectDNT: true,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_ID,
+        accessToken: process.env.CONTENTFUL_TOKEN,
       },
     },
     {
@@ -48,8 +48,7 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     // 'gatsby-plugin-purgecss',
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     'gatsby-plugin-netlify',
+    'gatsby-plugin-netlify-cache',
   ],
 }

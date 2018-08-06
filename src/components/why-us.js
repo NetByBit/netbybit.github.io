@@ -2,13 +2,11 @@ import React from 'react'
 
 import chunck from 'lodash/chunk'
 import { Row, Col } from 'reactstrap'
-import { translate } from 'react-i18next'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Section from './ui/section'
 
-const Icon = ({ className }) => (
-  <i className={`colored ${className}`} />
-)
+const Icon = ({ className }) => <i className={`colored ${className}`} />
 
 const icons = [
   'devicon-html5-plain',
@@ -19,30 +17,50 @@ const icons = [
   'devicon-react-original',
 ]
 
-const WhyUs = ({ t }) => (
-  <Section className="sublist" id="why">
-    <Row>
-      <Col md>
-        <div className="list-info">
-          <h3 className="h1 section-head head-border text-uppercase">
-            {t('title')}
-          </h3>
-          <p className="section-desc">{t('description')}</p>
-        </div>
-      </Col>
-      <Col md className="icons">
-        {chunck(icons, 3).map(row => (
-          <Row className="text-center" key={row}>
-            {row.map(icon => (
-              <Col xs="4" key={icon}>
-                <Icon className={icon} />
-              </Col>
-            ))}
+const WhyUs = ({ locale }) => (
+  <StaticQuery
+    query={graphql`
+      query WhyUsQuery {
+        en: contentfulWhyUs(node_locale: { eq: "en-US" }) {
+          title
+          description
+        }
+        ar: contentfulWhyUs(node_locale: { eq: "ar" }) {
+          title
+          description
+        }
+      }
+    `}
+    render={data => {
+      const langData = locale === 'ar' ? data.ar : data.en
+
+      return (
+        <Section className="sublist" id="why">
+          <Row>
+            <Col md>
+              <div className="list-info">
+                <h3 className="h1 section-head head-border text-uppercase">
+                  {langData.title}
+                </h3>
+                <p className="section-desc">{langData.description}</p>
+              </div>
+            </Col>
+            <Col md className="icons">
+              {chunck(icons, 3).map(row => (
+                <Row className="text-center" key={row}>
+                  {row.map(icon => (
+                    <Col xs="4" key={icon}>
+                      <Icon className={icon} />
+                    </Col>
+                  ))}
+                </Row>
+              ))}
+            </Col>
           </Row>
-        ))}
-      </Col>
-    </Row>
-  </Section>
+        </Section>
+      )
+    }}
+  />
 )
 
-export default translate('why-us')(WhyUs)
+export default WhyUs

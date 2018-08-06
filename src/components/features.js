@@ -1,44 +1,59 @@
 import React from 'react'
-
 import { Row, Col } from 'reactstrap'
-import { translate } from 'react-i18next'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Section from './ui/section'
 
-const Features = ({ t }) => (
+const Features = ({ locale }) => (
   <StaticQuery
     query={graphql`
       query FeaturesQuery {
-        responsive: file(relativePath: { eq: "web-design-min.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid_withWebp
+        en: contentfulFeatures(node_locale: { eq: "en-US" }) {
+          title
+          responsiveTitle
+          responsiveDescription
+          responsiveImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+        }
+        ar: contentfulFeatures(node_locale: { eq: "ar" }) {
+          title
+          responsiveTitle
+          responsiveDescription
+          responsiveImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
       }
     `}
-    render={data => (
-      <Section className="standard-picture" id="features" title={t('title')}>
-        <Row>
-          <Col md>
-            <div className="list-info">
-              <h3 className="section-head mb-4">{t('responsive')}</h3>
-              <p className="section-desc">{t('responsive-description')}</p>
-            </div>
-          </Col>
-          <Col md>
-            <Img
-              fluid={data.responsive.childImageSharp.fluid}
-              className="img-fluid center-block standard-image"
-            />
-          </Col>
-        </Row>
-      </Section>
-    )}
+    render={data => {
+      const langData = locale === 'ar' ? data.ar : data.en
+
+      return (
+        <Section className="standard-picture" id="features" title={langData.title}>
+          <Row>
+            <Col md>
+              <div className="list-info">
+                <h3 className="section-head mb-4">{langData.responsiveTitle}</h3>
+                <p className="section-desc">{langData.responsiveDescription}</p>
+              </div>
+            </Col>
+            <Col md>
+              <Img
+                fluid={langData.responsiveImage.fluid}
+                className="img-fluid center-block standard-image"
+              />
+            </Col>
+          </Row>
+        </Section>
+      )
+    }}
   />
 )
 
-export default translate('features')(Features)
+export default Features

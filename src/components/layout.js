@@ -1,27 +1,48 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { translate } from 'react-i18next'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Navbar from './navbar'
 
-const Layout = ({ i18n, t, children }) => {
-  const dir = i18n.language === 'ar' ? 'rtl' : 'ltr'
+const Layout = ({ locale, children }) => {
+  const dir = locale === 'ar' ? 'rtl' : 'ltr'
   return (
-    <>
-      <Helmet>
-        <title>{t('title')}</title>
-        <meta name="description" content="{t('description')}" />
-        <html lang={i18n.language} dir={dir} />
-      </Helmet>
-      <Navbar />
-      {children}
-    </>
+    <StaticQuery
+      query={graphql`
+        query LayoutQuery {
+          en: contentfulSeo(node_locale: { eq: "en-US" }) {
+            title
+            description
+          }
+          ar: contentfulSeo(node_locale: { eq: "ar" }) {
+            title
+            description
+          }
+        }
+      `}
+      render={data => {
+        const langData = locale === 'ar' ? data.ar : data.en
+
+        return (
+          <>
+            <Helmet>
+              <title>{langData.title}</title>
+              <meta name="description" content={langData.description} />
+              <html lang={locale} dir={dir} />
+            </Helmet>
+            <Navbar locale={locale} />
+            {children}
+          </>
+        )
+      }}
+    />
   )
 }
 
 Layout.propTypes = {
+  locale: PropTypes.oneOf(['en-US', 'ar']).isRequired,
   children: PropTypes.node.isRequired,
 }
 
-export default translate('seo')(Layout)
+export default Layout
