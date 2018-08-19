@@ -1,17 +1,14 @@
 require('dotenv').config({
   path: `.env`,
 })
+const path = require('path')
 
 module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          'Audiowide',
-          'Cairo',
-          'open sans', // you can also specify font weights and styles
-        ],
+        fonts: ['Audiowide', 'Cairo', 'open sans'],
       },
     },
     {
@@ -43,7 +40,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    // 'gatsby-plugin-purgecss',
     'gatsby-plugin-netlify',
   ],
 }

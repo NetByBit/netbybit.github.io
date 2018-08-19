@@ -34,7 +34,7 @@ class IndexPage extends Component {
     const { data } = this.props
     return (
       <LocaleContext.Provider value={this.state.locale}>
-        <Layout data={data.contentfulSeo}>
+        <Layout data={data.contentfulSeo} navbarData={data.contentfulNavbar}>
           <Header data={data.contentfulHeader} />
           <SocialMedia data={data.contentfulSocialMedia} />
           <WhyUs data={data.contentfulWhyUs} />
@@ -50,12 +50,14 @@ class IndexPage extends Component {
 }
 
 export default IndexPage
-// export default withLocale(IndexPage)
 
 export const query = graphql`
   query indexPageQuery($locale: String) {
     contentfulSeo(node_locale: { eq: $locale }) {
       ...Seo
+    }
+    contentfulNavbar(node_locale: { eq: $locale }) {
+      ...Navbar
     }
     contentfulHeader(node_locale: { eq: $locale }) {
       ...Header

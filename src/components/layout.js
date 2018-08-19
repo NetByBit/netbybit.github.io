@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 import Navbar from './navbar'
 import { withLocale } from '../localeContext'
 
-const Layout = ({ data, locale, children }) => {
+const Layout = ({ data, locale, children, navbarData }) => {
   const dir = locale === 'ar' ? 'rtl' : 'ltr'
   return (
     <>
@@ -15,7 +15,7 @@ const Layout = ({ data, locale, children }) => {
         <meta name="description" content={data.description} />
         <html lang={locale} dir={dir} />
       </Helmet>
-      <Navbar locale={locale} />
+      <Navbar data={navbarData} />
       {children}
     </>
   )
