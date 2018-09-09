@@ -1,0 +1,24 @@
+.about {
+  padding: 7em 0;
+  .vertical-text h5 {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 2em;
+    left: -4.5em;
+    word-spacing: 0.5em;
+    color: $teal;
+  }
+  .about-left h2 {
+    line-height: 2em;
+    font-weight: lighter;
+  }
+  .about-left {
+    margin: 2em 0;
+  }
+  strong {
+    font-weight: 800;
+  }
+  p:not(:last-of-type) {
+    margin-bottom: 2em;
+  }
+}

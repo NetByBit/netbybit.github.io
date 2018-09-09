@@ -1,0 +1,23 @@
+.navbar {
+  height: 5em;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-content: space-between;
+  top: 2em;
+  img {
+    width: 2em;
+    max-height: 100%;
+    margin-right: 0.5em;
+  }
+  .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: #fff;
+    text-decoration: none;
+  }
+  .menu img {
+    width: 3em;
+  }
+
+}

@@ -1,0 +1,11 @@
+// Variables
+@import '~bootstrap/scss/functions';
+
+// Bootstrap
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+
+@import 'global';
+@import 'components/header';
+@import 'components/navbar';
+@import 'components/about';
