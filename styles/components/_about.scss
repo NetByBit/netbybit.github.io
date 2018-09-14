@@ -1,12 +1,12 @@
 .about {
-  padding: 7em 0;
+  padding: 7rem 0;
   .vertical-text h5 {
     transform: rotate(-90deg);
     position: absolute;
     top: 2em;
     left: -4.5em;
     word-spacing: 0.5em;
-    color: $teal;
+    color: $primary;
   }
   .about-left h2 {
     line-height: 2em;
@@ -21,4 +21,49 @@
   p:not(:last-of-type) {
     margin-bottom: 2em;
   }
+  .img {
+    padding: 3.5em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.about-2 {
+  background: #eee;
+  padding: 5rem 0;
+  .cards {
+    * {
+      transition: all 500ms ease-in-out;
+    }
+  }
+  .card {
+    padding: 4rem 3rem;
+    margin: 0 1rem;
+    &:hover {
+      background: #829191;
+      color: #fff;
+      h3:after{
+        background-color: #fff;
+      }
+      i {
+        transform: translateY(-1rem);
+        // bottom: 1rem;
+      }
+    }
+    i {
+      // position: relative;
+    }
+    h3 {
+      margin: 1rem 0;
+      &:after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background-color: theme-color(primary);
+        margin: 15px auto 30px;
+      }
+    }
+  }
+  
 }

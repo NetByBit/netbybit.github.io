@@ -38,7 +38,7 @@ $grays: map-merge(
 
 $blue: #007bff !default;
 $indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
+$purple: #372554;
 $pink: #e83e8c !default;
 $red: #dc3545 !default;
 $orange: #fd7e14 !default;
@@ -46,8 +46,9 @@ $yellow: #ffc107 !default;
 $green: #28a745 !default;
 $cyan: #17a2b8 !default;
 
+$weldon-blue: #7c9eb2;
 $teal: #76d1a9;
-
+$myrtle-green : #3c6e71;
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $colors: map-merge(
@@ -65,11 +66,12 @@ $colors: map-merge(
     'white': $white,
     'gray': $gray-600,
     'gray-dark': $gray-800,
+    'weldon-blue': $weldon-blue
   ),
   $colors
 );
 
-$primary: $teal;
+$primary: $myrtle-green;
 $secondary: $gray-600 !default;
 $success: $green !default;
 $info: $cyan !default;

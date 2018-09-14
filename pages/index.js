@@ -6,6 +6,7 @@ import styled, { keyframes } from 'styled-components'
 import Header from '../components/header'
 import Navbar from '../components/Navbar'
 import About from '../components/about'
+import Team from '../components/team';
 
 const spin = keyframes`
   0% {
@@ -58,6 +59,7 @@ class Index extends Component {
         <Navbar />
         <Header />
         <About />
+        <Team />
       </div>
     )
   }
